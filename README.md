@@ -1,1 +1,1 @@
-Rep for javaScript exercises
+Repository for javaScript exercises
