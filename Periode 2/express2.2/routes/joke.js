@@ -17,7 +17,7 @@ router.get('/addjoke', function(req, res, next){
 })
 
 router.post('/addjoke', function(req, res, next){
-  jokes.addJoke(req.body.joke)
+  jokes.addJoke(req.body.addjoke)
   res.redirect('addjoke')
 })
 
