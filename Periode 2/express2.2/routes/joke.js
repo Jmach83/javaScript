@@ -13,7 +13,7 @@ router.get('/jokes', function(req, res, next){
 })
 
 router.get('/addjoke', function(req, res, next){
-  res.render('addjoke', {title:  'Add Joke', addjoke: jokes.addJoke(req.body.addJoke)})
+  res.render('addjoke', {title:  'Add Joke', addjoke: jokes.addJoke(req.body.addJoke), jokes: jokes.allJokes})
 })
 
 
