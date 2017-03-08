@@ -5,7 +5,7 @@ var jokes = [
 ];
 
 function _getRandomJoke(){
-    let index = Math.floor((Math.random()*3));
+    let index = Math.floor((Math.random()*jokes.length));
     return jokes[index]
 }
 
