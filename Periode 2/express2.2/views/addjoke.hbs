@@ -2,6 +2,9 @@
 <form method="POST">
     <input type="text" name="addjoke">   
 </form>
-<p>{{jokes}}</p>
+{{# each jokes}}
+<p>{{this}}</p>
+{{/each}}
 <br>
+<p>count: {{ count }}</p>
 <a href="/">index</a>
