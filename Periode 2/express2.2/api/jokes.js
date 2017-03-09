@@ -5,7 +5,6 @@ var jokes = require('../jokes');
 router.get('/', function(req, res, next){
     let json = JSON.stringify(jokes.allJokes);
     res.send(json);
-    res.end();
 })
 
 module.exports = router;
