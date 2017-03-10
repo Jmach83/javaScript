@@ -14,7 +14,7 @@ var jokes = require('./routes/joke');
 
 var apiJoke = require('./api/joke');
 var apiJokes = require('./api/jokes');
-//var apiAddJoke = require('./api/addJoke');
+var apiAddJoke = require('./api/addJoke');
 
 var app = express();
 
@@ -54,7 +54,7 @@ app.use('/joke', jokes);
 
 app.use('/api/joke', apiJoke);
 app.use('/api/jokes', apiJokes);
-//app.use('/api/AddJokeoke', apiAddJoke);
+app.use('/api/AddJokeoke', apiAddJoke);
 
 
 // catch 404 and forward to error handler
