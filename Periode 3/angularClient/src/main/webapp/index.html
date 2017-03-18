@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myModule" ng-controller="myController as myCtrl">
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <script src="javascript.js"></script>
+    </head>
+    <body>
+        <h1>TheFunnySite</h1>
+        <hr>
+        <div>
+            <div>
+                <h2>All Jokes</h2>
+                <ul ng-repeat="joke in myCtrl.jokeData">
+                    <li>
+                        <ul>
+                            <li>The joke: {{joke.joke}}</li>                    
+                            <li>The id: {{joke._id}}</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <div>
+                <h2>Get one joke by id</h2>
+                <form ng-submit="myCtrl.getJoke()">
+                    <input type="text" placeholder="joke ID" ng-model="myCtrl.jokeId">
+                    <button type="submit">Hent joke</button>
+                </form>                
+                <p>Joke by id: {{myCtrl.jokeById.joke}}</p>                                
+            </div>            
+        </div>        
+    </body>
+</html>

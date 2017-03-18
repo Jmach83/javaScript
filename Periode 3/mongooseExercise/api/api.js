@@ -6,6 +6,9 @@ router.get("/",(req,res) =>{
 });
 
 router.get('/jokes', function(req, res){
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
     jokeModel.find(function(err, jokes){
       if(err){
         res.send(err);
@@ -15,6 +18,9 @@ router.get('/jokes', function(req, res){
 });
 
 router.get('/jokes/:id', function(req, res){
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  
     jokeModel.findById(req.params.id, function(err, joke){
       if(err){
         res.send(err);
@@ -24,6 +30,8 @@ router.get('/jokes/:id', function(req, res){
 });
 
 router.post('/jokes', function(req, res){
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   let joke = new jokeModel;
 
   joke.joke = req.body.joke;
@@ -39,6 +47,8 @@ router.post('/jokes', function(req, res){
 });
 
 router.put('/jokes/:id', function(req, res){
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   jokeModel.findByIdAndUpdate(req.params.id, 
   {
     joke: req.params.joke,
@@ -54,6 +64,8 @@ router.put('/jokes/:id', function(req, res){
 })
 
 router.delete('/jokes/:id', function(req, res){
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   jokeModel.findByIdAndRemove(req.params.id, function(err, joke){
     if(err){
       res.send(err);
