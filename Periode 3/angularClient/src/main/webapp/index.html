@@ -24,11 +24,19 @@
             <br>
             <div>
                 <h2>Get one joke by id</h2>
-                <form ng-submit="myCtrl.getJoke()">
-                    <input type="text" placeholder="joke ID" ng-model="myCtrl.jokeId">
+                <form ng-submit="myCtrl.getJoke(getId)">
+                    <input type="text" placeholder="joke ID" ng-model="getId">
                     <button type="submit">Hent joke</button>
                 </form>                
                 <p>Joke by id: {{myCtrl.jokeById.joke}}</p>                                
+            </div>            
+            <div>
+                <h2>Delete joke by id</h2>
+                <form ng-submit="myCtrl.deleteJoke(jokeId)">
+                    <input type="text" placeholder="joke ID" ng-model="deleteId">
+                    <button type="submit">Slet joke</button>
+                </form>                
+                <p>Joke by id is deleted succesfully</p>                                
             </div>            
         </div>        
     </body>

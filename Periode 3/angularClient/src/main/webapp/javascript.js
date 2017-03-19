@@ -2,8 +2,6 @@ angular.module('myModule', [])
         .controller('myController', ['$http', function ($http){
                 var self = this;
                 self.jokeData;
-                self.jokeId;
-                
                 
                 
                 $http.get('http://localhost:8000/api/jokes')
@@ -11,11 +9,15 @@ angular.module('myModule', [])
                             self.jokeData = response.data;
                         });
                 
-                self.getJoke = function(){
-                    $http.get('http://localhost:8000/api/jokes/' + self.jokeId)
+                self.getJoke = function(id){
+                    $http.get('http://localhost:8000/api/jokes/' + id)
                             .then (function(response){
                                 self.jokeById = response.data;
                     });
+                };
+                
+                self.deleteJoke = function(id) {
+                    $http.delete('http://localhost:8000/api/jokes' + id);                            
                 };
 }]);
 
