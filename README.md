@@ -12,4 +12,4 @@ Repository for javaScript exercises
   - Express exercises Problem 2 - 7, in folder express2.2
   
  - Periode 3 (Hand-in)
-  - Mongoose exercise in mongooseExercise folder
+    - Mongoose exercise in mongooseExercise folder
