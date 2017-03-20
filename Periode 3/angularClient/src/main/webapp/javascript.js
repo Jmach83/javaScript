@@ -19,6 +19,13 @@ angular.module('myModule', [])
                 self.deleteJoke = function(id) {
                     $http.delete('http://localhost:8000/api/jokes' + id);                            
                 };
+                
+                self.addJoke = function (joke){
+                    $http.post('http://localhost:8000/jokes', joke);
+                            
+                    
+                            
+                };
 }]);
 
 

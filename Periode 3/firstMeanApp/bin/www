@@ -26,7 +26,7 @@ var server = http.createServer(app);
  */
 
 var db = require('../db/db');
-var connection_string = 'mongodb://localhost:27017/jokes';
+var connection_string = 'mongodb://localhost:27017/testJokeDB';
 db.connect(connection_string, function(err){
   if(err){
     console.log('Could not connect to Database');

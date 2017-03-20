@@ -35,8 +35,17 @@
                 <form ng-submit="myCtrl.deleteJoke(jokeId)">
                     <input type="text" placeholder="joke ID" ng-model="deleteId">
                     <button type="submit">Slet joke</button>
-                </form>                
-                <p>Joke by id is deleted succesfully</p>                                
+                </form>                                                
+            </div>            
+            <div>
+                <h2>Add joke</h2>
+                <form ng-submit="myCtrl.addJoke(joke)">
+                    <input type="text" placeholder="joke" ng-model="joke.joke">
+                    <input type="text" placeholder="category" ng-model="joke.category">
+                    <input type="text" placeholder="author" ng-model="joke.reference.author">
+                    <input type="text" placeholder="link" ng-model="joke.reference.link">
+                    <button type="submit">Add joke</button>
+                </form>                                                
             </div>            
         </div>        
     </body>
