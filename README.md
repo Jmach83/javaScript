@@ -10,3 +10,6 @@ Repository for javaScript exercises
   - From allmost zero to start, in the AlmostZeroToStart folder
   - Express exercise Problem 1 - understanding middleware, in the folder express2.1
   - Express exercises Problem 2 - 7, in folder express2.2
+  
+ - Periode 3 (Hand-in)
+  - Mongoose exercise in mongooseExercise folder
