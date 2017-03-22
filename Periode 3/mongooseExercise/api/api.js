@@ -70,7 +70,7 @@ router.delete('/jokes/:id', function(req, res){
     if(err){
       res.send(err);
     }
-    res.statusCode();
+    res.status(204).send();
   })
 })
 
