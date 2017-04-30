@@ -1,5 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 
 let musicians= [
       {id: 1, name: "James Hetfield", stars: 8},
@@ -9,7 +7,4 @@ let musicians= [
       {id: 5, name: "Emmelie de Forest", stars: 1}  
  ]
 
-/*ReactDOM.render(
-    <MusiciansPresenter data={musicians} />, 
-    document.getElementById('root')
-);*/
+export default musicians;
