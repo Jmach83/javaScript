@@ -21,37 +21,66 @@ class BookStore {
 
   @action
   addBook(book){
-    this._books.push(book);
+   // this._books.push(book);
+   console.log(book)
+    fetch(baseUrl+'book', {
+      method: 'POST',
+      headers: {
+        'Accept': 'aplication/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "id": book.id,
+        "title": book.title,
+        "info": book.info,
+        "moreInfo": book.moreInfo
+      })
+    }).then(() => {
+      this.fetchBooks();
+    })
+    
   }
 
   @action
   deleteBook(id){
-    this._books.splice(this._books.findIndex((b) => {return b.id === id}), 1);
-  }
+    /*this._books.splice(this._books.findIndex((b) => {return b.id === id}), 1);*/
+    fetch(baseUrl+'book/'+id, {
+      method: 'DELETE'
+    }).then(() => {
+      this.fetchBooks();
+    })
+      
+    
+}
 
   @action
   editBook(book){
-    this._books[this._books.findIndex((b) => {return b.id === book.id})] = book;
+    /*this._books[this._books.findIndex((b) => {return b.id === book.id})] = book;*/
+    fetch(baseUrl+'book/'+book.id, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json'
+       },
+      body: JSON.stringify({
+        "id": book.id,
+        "title": book.title,
+        "info": book.info,
+        "moreInfo": book.moreInfo
+      }),
+     }).then(() => {
+       this.fetchBooks();
+     }).then(() => {
+       this.getBook(book.id);
+     })     
   }
   
-  getBook(id) {
+  @action
+  getBook(id) {    
     return this._books.filter((book) => {
       return book.id === Number(id);
-    })[0];
-   /*var book;
-
-   fetch(baseUrl+'book/'+id)
-      .then((response) => {
-        return response.json();        
-      })
-      .then((json)=>{
-        book = json;
-        console.log(book);
-      })
-
-      return book;*/
+    })[0];      
   }
-
+  
   fetchBooks = ()=> {
     fetch(baseUrl+'books')
       .then((response) => {

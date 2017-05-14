@@ -14,8 +14,18 @@ export default class Product extends React.Component {
     bookStore.deleteBook(id);
   }
 
+ 
+
   render() {
     const books = this.props.route.bookStore.books;
+
+   var bookID = () =>{
+    if(books.length === 0){
+      return 1;
+     }else{
+       return books[books.length-1].id;
+     }
+    }
     return (
       <div>
         <h3>All our great books </h3>
@@ -26,7 +36,7 @@ export default class Product extends React.Component {
             <button onClick={() => this.handleClick(book.id)} name="delete">Delete</button>
             </li>)}
         </ul>    
-        <NewBook bookStore={bookStore} />
+        <NewBook bookStore={bookStore}  bookID={bookID} />
       </div>        
     )
   }
