@@ -71,7 +71,7 @@ class BookStore {
        this.fetchBooks();
      }).then(() => {
        this.getBook(book.id);
-     })     
+     })
   }
   
   @action
@@ -88,7 +88,8 @@ class BookStore {
       })
       .then((response) => {
           this.changeBooks(response);
-        console.log("Got books from server");
+        console.log("Got books from server ");
+        console.log(response);
       })
   }
 }
